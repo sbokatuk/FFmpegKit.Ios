@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
+    <OutputPath>..\Nugets\Xamarin.FFmpegKit.Video.iOS\lib\Xamarin.iOS10</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
+    <OutputPath>..\Nugets\Xamarin.FFmpegKit.Video.iOS\lib\Xamarin.iOS10</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -51,6 +51,34 @@
       <IsCxx>True</IsCxx>
       <LinkerFlags>-lc++ -lbz2 -liconv</LinkerFlags>
       <Frameworks>VideoToolbox</Frameworks>
+    </NativeReference>
+    <NativeReference Include="libs\libswscale.xcframework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
+    <NativeReference Include="libs\libswresample.xcframework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
+    <NativeReference Include="libs\libavutil.xcframework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
+    <NativeReference Include="libs\libavformat.xcframework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
+    <NativeReference Include="libs\libavfilter.xcframework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
+    <NativeReference Include="libs\libavdevice.xcframework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
+    <NativeReference Include="libs\libavcodec.xcframework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
     </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
