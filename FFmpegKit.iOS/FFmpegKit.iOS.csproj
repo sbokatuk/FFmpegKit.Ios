@@ -4,10 +4,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{F96092DE-CD35-49D2-8FC2-7FB5BF2D2385}</ProjectGuid>
+    <ProjectGuid>{70F1FD49-8540-415E-8B7D-C620C3C5A6E9}</ProjectGuid>
     <TemplateGuid>{b6f3ff35-79b2-4f25-a2fc-60a7cf61013b}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>FFmpegKit.Ios</RootNamespace>
+    <RootNamespace>FFMpegKit.Ios</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>FFmpegKit.iOS</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
@@ -46,40 +46,11 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\lib\ffmpegkit.framework">
-      <Kind>Framework</Kind>
-      <ForceLoad>True</ForceLoad>
-      <IsCxx>True</IsCxx>
-      <Frameworks>CoreMotion VideoToolbox Accelerate</Frameworks>
-      <LinkerFlags>-lc++ -lbz2 -liconv -lz</LinkerFlags>
-    </NativeReference>
-    <NativeReference Include="..\lib\libavcodec.framework">
+    <NativeReference Include="libs\ffmpegkit.xcframework">
       <Kind>Framework</Kind>
       <IsCxx>True</IsCxx>
-    </NativeReference>
-    <NativeReference Include="..\lib\libavdevice.framework">
-      <Kind>Framework</Kind>
-      <IsCxx>True</IsCxx>
-    </NativeReference>
-    <NativeReference Include="..\lib\libavfilter.framework">
-      <Kind>Framework</Kind>
-      <IsCxx>True</IsCxx>
-    </NativeReference>
-    <NativeReference Include="..\lib\libavformat.framework">
-      <Kind>Framework</Kind>
-      <IsCxx>True</IsCxx>
-    </NativeReference>
-    <NativeReference Include="..\lib\libavutil.framework">
-      <Kind>Framework</Kind>
-      <IsCxx>True</IsCxx>
-    </NativeReference>
-    <NativeReference Include="..\lib\libswresample.framework">
-      <Kind>Framework</Kind>
-      <IsCxx>True</IsCxx>
-    </NativeReference>
-    <NativeReference Include="..\lib\libswscale.framework">
-      <Kind>Framework</Kind>
-      <IsCxx>True</IsCxx>
+      <LinkerFlags>-lc++ -lbz2 -liconv</LinkerFlags>
+      <Frameworks>VideoToolbox</Frameworks>
     </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
