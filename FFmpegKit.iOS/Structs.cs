@@ -1,7 +1,7 @@
 ﻿using System;
 using ObjCRuntime;
 
-namespace FFMpegKit.Ios
+namespace Ffmpegkit.Ios
 {
     [Native]
     public enum LogRedirectionStrategy : ulong

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Xamarin.FFmpegKit.Video.iOS</id>
-    <title>Xamarin bindings to the native iOS FFmpekKit Video SDK.</title>
-    <version>4.5.1</version>
+    <id>Xamarin.FFmpegKit.FullGpl.iOS</id>
+    <title>Xamarin bindings to the native iOS FFmpekKit FullGpl SDK.</title>
+    <version>4.5.1-beta2</version>
     <authors>s.bokatuk</authors>
     <owners>s.bokatuk</owners>
     <license type="expression">MIT</license>
@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Xamarin bindings to the native FFmpegKit Video SDK.</description>
     <summary>Xamarin bindings to the native FFmpegKit Video SDK.</summary>
-    <tags>ffmpeg ffmpegkit video SDK Xamarin iOS Xamarin.iOS MonoTouch Binding</tags>
+    <tags>ffmpeg ffmpegkit video SDK Xamarin iOS Xamarin.iOS MonoTouch fullgpl full-gel Binding</tags>
     <icon>images/icon.png</icon>
     <releaseNotes>
 

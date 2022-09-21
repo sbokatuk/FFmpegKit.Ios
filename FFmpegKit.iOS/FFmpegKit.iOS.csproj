@@ -7,7 +7,7 @@
     <ProjectGuid>{70F1FD49-8540-415E-8B7D-C620C3C5A6E9}</ProjectGuid>
     <TemplateGuid>{b6f3ff35-79b2-4f25-a2fc-60a7cf61013b}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>FFMpegKit.Ios</RootNamespace>
+    <RootNamespace>Ffmpegkit.Ios</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>FFmpegKit.iOS</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
@@ -46,37 +46,38 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="libs\ffmpegkit.xcframework">
+    <NativeReference Include="libs\ffmpegkit.framework">
       <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
       <IsCxx>True</IsCxx>
-      <LinkerFlags>-lc++ -lbz2 -liconv</LinkerFlags>
-      <Frameworks>VideoToolbox</Frameworks>
+      <Frameworks>VideoToolbox CoreMotion Accelerate</Frameworks>
+      <LinkerFlags>-lc++ -liconv -lbz2 -lz</LinkerFlags>
     </NativeReference>
-    <NativeReference Include="libs\libswscale.xcframework">
-      <Kind>Framework</Kind>
-      <IsCxx>True</IsCxx>
-    </NativeReference>
-    <NativeReference Include="libs\libswresample.xcframework">
+    <NativeReference Include="libs\libswscale.framework">
       <Kind>Framework</Kind>
       <IsCxx>True</IsCxx>
     </NativeReference>
-    <NativeReference Include="libs\libavutil.xcframework">
+    <NativeReference Include="libs\libswresample.framework">
       <Kind>Framework</Kind>
       <IsCxx>True</IsCxx>
     </NativeReference>
-    <NativeReference Include="libs\libavformat.xcframework">
+    <NativeReference Include="libs\libavutil.framework">
       <Kind>Framework</Kind>
       <IsCxx>True</IsCxx>
     </NativeReference>
-    <NativeReference Include="libs\libavfilter.xcframework">
+    <NativeReference Include="libs\libavformat.framework">
       <Kind>Framework</Kind>
       <IsCxx>True</IsCxx>
     </NativeReference>
-    <NativeReference Include="libs\libavdevice.xcframework">
+    <NativeReference Include="libs\libavfilter.framework">
       <Kind>Framework</Kind>
       <IsCxx>True</IsCxx>
     </NativeReference>
-    <NativeReference Include="libs\libavcodec.xcframework">
+    <NativeReference Include="libs\libavdevice.framework">
+      <Kind>Framework</Kind>
+      <IsCxx>True</IsCxx>
+    </NativeReference>
+    <NativeReference Include="libs\libavcodec.framework">
       <Kind>Framework</Kind>
       <IsCxx>True</IsCxx>
     </NativeReference>

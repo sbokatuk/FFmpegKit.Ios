@@ -4,7 +4,7 @@ using ObjCRuntime;
 using Foundation;
 using UIKit;
 
-namespace FFMpegKit.Ios
+namespace Ffmpegkit.Ios
 {
     // The first step to creating a binding is to add your native library ("libNativeLibrary.a")
     // to the project by right-clicking (or Control-clicking) the folder containing this source
@@ -124,7 +124,7 @@ namespace FFMpegKit.Ios
 	  protocol, then [Model] is redundant and will generate code that will never
 	  be used.
 	*/
-    [Protocol, Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface Session
     {
@@ -168,10 +168,10 @@ namespace FFMpegKit.Ios
         [Export("getCommand")]
         string Command { get; }
 
-        // @required -(NSArray *)getAllLogsWithTimeout:(int)waitTimeout;
-        [Abstract]
-        [Export("getAllLogsWithTimeout:")]
-        NSObject[] GetAllLogsWithTimeout(int waitTimeout);
+        //// @required -(NSArray *)getAllLogsWithTimeout:(int)waitTimeout;
+        //[Abstract]
+        //[Export("getAllLogsWithTimeout:")]
+        //NSObject[] GetAllLogsWithTimeout(int waitTimeout);
 
         // @required -(NSArray *)getAllLogs;
         [Abstract]
@@ -183,10 +183,10 @@ namespace FFMpegKit.Ios
         [Export("getLogs")]
         NSObject[] Logs { get; }
 
-        // @required -(NSString *)getAllLogsAsStringWithTimeout:(int)waitTimeout;
-        [Abstract]
-        [Export("getAllLogsAsStringWithTimeout:")]
-        string GetAllLogsAsStringWithTimeout(int waitTimeout);
+        //// @required -(NSString *)getAllLogsAsStringWithTimeout:(int)waitTimeout;
+        //[Abstract]
+        //[Export("getAllLogsAsStringWithTimeout:")]
+        //string GetAllLogsAsStringWithTimeout(int waitTimeout);
 
         // @required -(NSString *)getAllLogsAsString;
         [Abstract]
@@ -269,22 +269,17 @@ namespace FFMpegKit.Ios
         void Cancel();
     }
 
-    [Protocol]
-    interface ISession
-    {
-    }
-
-    [Static]
-    partial interface Constants
-    {
-        // extern const int AbstractSessionDefaultTimeoutForAsynchronousMessagesInTransmit;
-        [Field("AbstractSessionDefaultTimeoutForAsynchronousMessagesInTransmit", "__Internal")]
-        int AbstractSessionDefaultTimeoutForAsynchronousMessagesInTransmit { get; }
-    }
+    //[Static]
+    //partial interface Constants
+    //{
+    //    // extern const int AbstractSessionDefaultTimeoutForAsynchronousMessagesInTransmit;
+    //    [Field("AbstractSessionDefaultTimeoutForAsynchronousMessagesInTransmit", "__Internal")]
+    //    int AbstractSessionDefaultTimeoutForAsynchronousMessagesInTransmit { get; }
+    //}
 
     // @interface AbstractSession : NSObject <Session>
     [BaseType(typeof(NSObject))]
-    interface AbstractSession : ISession
+    interface AbstractSession : Session
     {
         // -(instancetype)init:(NSArray *)arguments withLogCallback:(LogCallback)logCallback withLogRedirectionStrategy:(LogRedirectionStrategy)logRedirectionStrategy;
         [Export("init:withLogCallback:withLogRedirectionStrategy:")]
